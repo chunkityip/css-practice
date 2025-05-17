@@ -40,11 +40,12 @@ header h1{
     font-size: 4rem;
 }
 header h2{
-    margin-top: 20px;
+    margin-top: 100px;
     margin-bottom: 20px;
     font-weight: 10;
 }
 header p{
+    margin-top: 55px;
     color: var(--secondary-text-color);
 }
 header .read-more{
@@ -58,4 +59,9 @@ header .read-more{
     border-radius: 5px;
     text-decoration: none;
     margin-bottom: 80px;
+    transition: 200ms ease;
+    cursor: pointer;
+}
+header .read-more:hover{
+    background-color: var(--secondary-color);
 }
