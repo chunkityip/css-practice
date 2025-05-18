@@ -4,6 +4,11 @@
     --secondary-color: #101113;
     --text-color: #101113;
     --secondary-text-color: #7f8082;
+    --light-gray: #f5f5f5;
+    --border-radius: 8px;
+    --box-shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --box-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --transition-speed: 0.3s;
 }
 
 *{
@@ -66,44 +71,365 @@ header .read-more:hover{
     background-color: var(--secondary-color);
 }
 
-#skill-section{
-    padding: 80px 20px 150px 20px;
+#skill-section {
+  padding: 80px 20px 150px 20px;
+  background-color: var(--primary-color);
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-#skill-section h2{
+
+#skill-section h2 {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--text-color);
+  position: relative;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+#skill-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+}
+
+#skill-section .wrapper {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skill-container {
+  padding-top: 0;
+  width: 400px;
+  max-width: 100%;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-container:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+}
+
+.skill-container h3 {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 18px 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin: 0;
+  position: relative;
+}
+
+.skill-container h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.skill-container ul {
+  margin: 15px 0;
+  list-style: none;
+  padding: 0 15px;
+}
+
+.skill-container ul li {
+  padding: 18px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.skill-container ul li:last-child {
+  border-bottom: none;
+}
+
+/* Improved progress bars */
+.skill-container ul li progress {
+  height: 12px;
+  width: 180px;
+  border-radius: 10px;
+  border: none;
+  background-color: #e0e0e0;
+  color: var(--accent-color);
+  overflow: hidden;
+}
+
+.skill-container ul li progress::-webkit-progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+.skill-container ul li progress::-webkit-progress-value {
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+  background-image: linear-gradient(45deg, 
+    rgba(255,255,255,.15) 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    rgba(255,255,255,.15) 50%, 
+    rgba(255,255,255,.15) 75%, 
+    transparent 75%, 
+    transparent);
+  background-size: 20px 20px;
+  animation: progress-animation 2s linear infinite;
+}
+
+.skill-container ul li progress::-moz-progress-bar {
+  background-color: var(--accent-color);
+  border-radius: 10px;
+}
+
+/* Add animation for striped progress bars */
+@keyframes progress-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 0;
+  }
+}
+
+#projects-section{
+    padding: 100px 20px;
+}
+#projects-section h2{
     font-size: 3rem;
     text-align: center;
+    margin-bottom: 60px;
+    position: relative;
 }
-#skill-section .wrapper{
-    margin-top: 60px;
+#projects-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+details{
+    margin: 0 auto;
+    width: 100%;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-light);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+details:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-medium);
+}
+
+details summary{
     display: flex;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
+    align-items: center;
+    cursor: pointer;
+    gap: 20px;
+    padding: 25px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-speed);
+    position: relative;
 }
-.skill-container{
-    padding-top: 10px;
-    width: 400px;
-    max-width: 100%;
-    border: 10px solid var(--primary-color);
-    border-top: none;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+details summary::-webkit-details-marker {
+  display: none;
 }
-.skill-container h3{
+
+details summary::after {
+  content: "+";
+  position: absolute;
+  right: 30px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--accent-color);
+  transition: transform var(--transition-speed);
+}
+
+details[open] summary::after {
+  content: "−";
+  transform: rotate(180deg);
+}
+
+details summary:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+details .number{
     background-color: var(--accent-color);
     color: white;
-    padding: 15px 0;
-    text-align: center;
-    text-transform: uppercase;
-}
-.skill-container ul{
-    margin: 10px 0;
-    list-style: none;
-}
-.skill-container ul li{
-    padding: 15px;
+    min-width: 50px;
+    min-height: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: 0 3px 6px rgba(66, 133, 244, 0.3);
 }
-.skill-container ul li progress{
-    accent-color: var(--accent-color);
+
+details h3 {
+  font-size: 1.75rem;
+  margin: 0;
+  color: var(--text-color);
+  flex-grow: 1;
+}
+
+details .text-container {
+  padding: 30px;
+  background-color: var(--primary-color);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+details .text-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+
+details .project-frontend-link,
+details .project-backend-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 0.75em 1.5em;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Frontend link specific styles */
+details .project-frontend-link {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Backend link specific styles */
+details .project-backend-link {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/* Hover effects */
+details .project-frontend-link:hover,
+details .project-backend-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Active/click effect */
+details .project-frontend-link:active,
+details .project-backend-link:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Add icons to buttons (optional) */
+details .project-frontend-link::before,
+details .project-backend-link::before {
+    font-family: 'Font Awesome 5 Free', sans-serif; /* Requires Font Awesome */
+    margin-right: 8px;
+    font-weight: 900;
+}
+
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  #projects-section h2 {
+    font-size: 2.5rem;
+  }
+  
+  details summary {
+    padding: 20px;
+    gap: 15px;
+  }
+  
+  details h3 {
+    font-size: 1.4rem;
+  }
+  
+  details .number {
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 1rem;
+  }
+  
+  details .text-container {
+    padding: 20px;
+  }
+  
+  .project-links {
+    flex-direction: column;
+  }
+  
+  details .project-frontend-link,
+  details .project-backend-link {
+    width: 100%;
+    margin-left: 0;
+  }
 }
