@@ -397,12 +397,6 @@ details .project-backend-link::before {
     font-weight: 900;
 }
 
-
-/* Responsive styling */
-@media (max-width: 768px) {
-  #projects-section h2 {
-    font-size: 2.5rem;
-  }
   
   details summary {
     padding: 20px;
@@ -432,4 +426,108 @@ details .project-backend-link::before {
     width: 100%;
     margin-left: 0;
   }
+
+footer {
+    background-color: var(--primary-color);
+    padding: 100px 20px;
+    position: relative; /* Added for absolute positioning of cats */
 }
+
+footer .grid-container {
+    margin: 0 auto;
+    width: 1000px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr max-content;
+    gap: 100px;
+    align-items: start;
+    position: relative; /* Ensure content stays above cats */
+    z-index: 2;
+}
+
+footer #at-symbol {
+    font-size: 150pt;
+    line-height: 1;
+    color: var(--accent-color);
+}
+
+footer h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+footer a {
+    margin-top: 5px;
+    display: inline-block;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
+
+/* Cat corner positioning */
+.cat-corners {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevents cats from interfering with clicks */
+    z-index: 1;
+}
+
+.cat {
+    position: absolute;
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    opacity: 0.8; /* Slightly transparent so they don't overpower content */
+    animation: spin 10s linear infinite; /* Added spinning animation */
+}
+
+.cat-top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.cat-top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.cat-bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.cat-bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Spinning animation keyframes */
+@keyframes spin {
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
+
+/* Optional: Add hover effects for fun */
+.cat:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  #projects-section h2 {
+    font-size: 2.5rem;
+  }
+}
+
