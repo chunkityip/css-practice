@@ -1,45 +1,71 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protfolio</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="human_mode.png">
+        <img src="human_mode.png" alt="Profile Image">
         <div class="container">
-            <h1>Chunkit Yip</h1>
+            <h1>Chunkit Yip(Ck)</h1>
             <h2>Web Developer</h2>
             <p>Welcome to my personal web page. Here you can find information about my projects and skills.</p>
-            <br/>
-            <a class="read-more">Read More</a>
+            <p>Oh! Also , I like cat</p>
+            <br>
+            <a href="#about-section" class="read-more">Read More</a>
         </div>
     </header>
+    
+    <section id="about-section">
+        <div class="container">
+            <img src="this_is_fine.gif" alt="About Me Image">
+            <div class="content">
+                <h2>About Me 🐱</h2>
+                <p class="description">I am a FullStack Developer with 2 years of experience, currently working at Morgan Stanley. I specialize in Java Spring Boot backend development and Angular frontend applications, with expertise in DB2 database management.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <section id="skill-section">
-        <h2>My Skillset</h2>
+        <h2>My Skillset 🐾</h2>
         <div class="wrapper">
             <div class="skill-container">
                 <h3>Front-End</h3>
                 <ul>
-                    <li>HTML5 , CSS <progress max="100" value="60"></progress></li>
+                    <li>HTML5, CSS <progress max="100" value="60"></progress></li>
                     <li>TypeScript <progress max="100" value="40"></progress></li>
                     <li>Angular <progress max="100" value="25"></progress></li>
                 </ul>
             </div>
-        
-        <div class="skill-container">
-            <h3>Back-End</h3>
-            <ul>
-                <li>Java <progress max="100" value="80"></progress></li>
-                <li>Springboot <progress max="100" value="60"></progress></li>
-            </ul>
+            
+            <div class="skill-container">
+                <h3>Back-End</h3>
+                <ul>
+                    <li>Java <progress max="100" value="80"></progress></li>
+                    <li>Springboot <progress max="100" value="60"></progress></li>
+                </ul>
+            </div>
         </div>
-    </div>
     </section>
+    
     <section id="projects-section">
-        <h2>My Projects</h2>
+        <h2>My Projects 🐱‍💻</h2>
         <div class="flex-container">
             <details>
                 <summary>
@@ -54,36 +80,43 @@
                     </div>
                 </div>
             </details>
+            
             <details>
                 <summary>
                     <span class="number">2</span>
-                    <h3>TDB</h3>
+                    <h3>Project TBD</h3>
                 </summary>
                 <div class="text-container">
-                    <p>Employee Management System - A full-stack application for managing employee data, attendance, and performance.</p>
-                        <a class="project-frontend-link" href="https://github.com/chunkityip/Employee-Management-Frontend">Front-End</a>
-                        <a class="project-backend-link" href="https://github.com/chunkityip/Employee-Management-Backend">Back-End</a>
+                    <p>Future project - Details to be determined.</p>
+                    <div class="project-links">
+                        <a class="project-frontend-link" href="#" onclick="return false;">Front-End (Coming Soon)</a>
+                        <a class="project-backend-link" href="#" onclick="return false;">Back-End (Coming Soon)</a>
+                    </div>
                 </div>
             </details>
+            
             <details>
                 <summary>
-                    <span class="number">2</span>
-                    <h3>TDB</h3>
+                    <span class="number">3</span>
+                    <h3>Project TBD</h3>
                 </summary>
                 <div class="text-container">
-                    <p>Employee Management System - A full-stack application for managing employee data, attendance, and performance.</p>
-                        <a class="project-frontend-link" href="https://github.com/chunkityip/Employee-Management-Frontend">Front-End</a>
-                        <a class="project-backend-link" href="https://github.com/chunkityip/Employee-Management-Backend">Back-End</a>
+                    <p>Future project - Details to be determined.</p>
+                    <div class="project-links">
+                        <a class="project-frontend-link" href="#" onclick="return false;">Front-End (Coming Soon)</a>
+                        <a class="project-backend-link" href="#" onclick="return false;">Back-End (Coming Soon)</a>
+                    </div>
                 </div>
             </details>
         </div>
     </section>
+    
     <footer>
         <div class="cat-corners">
-            <img src="http://i.giphy.com/XWR4jehW2X2E0.gif" class="cat cat-top-left">
-            <img src="http://i.giphy.com/XWR4jehW2X2E0.gif" class="cat cat-top-right">
-            <img src="http://i.giphy.com/XWR4jehW2X2E0.gif" class="cat cat-bottom-left">
-            <img src="http://i.giphy.com/XWR4jehW2X2E0.gif" class="cat cat-bottom-right">
+            <img src="http://i.giphy.com/XWR4jehW2X2E0.gif" class="cat cat-top-left" alt="Cat animation">
+            <img src="http://i.giphy.com/XWR4jehW2X2E0.gif" class="cat cat-top-right" alt="Cat animation">
+            <img src="http://i.giphy.com/XWR4jehW2X2E0.gif" class="cat cat-bottom-left" alt="Cat animation">
+            <img src="http://i.giphy.com/XWR4jehW2X2E0.gif" class="cat cat-bottom-right" alt="Cat animation">
         </div>
         <div class="grid-container">
             <span id="at-symbol">@</span>
@@ -95,7 +128,7 @@
             </div>
             <div>
                 <h3>Projects</h3>
-                <a href="#projects">View Projects</a>
+                <a href="#projects-section">View Projects</a>
             </div>
         </div>
     </footer>
